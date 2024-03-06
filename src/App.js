@@ -22,7 +22,6 @@ const App = () => {
           etr: post.yoast_head_json.twitter_misc["Est. reading time"]
         }));
         setPosts(mappedPosts);
-        console.log(data[5]);
       })
       .catch((error) => {
         setLoading(false);
