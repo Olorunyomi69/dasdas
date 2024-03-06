@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Navbar, Header, Card, Footer } from './Components'
-
+import { Navbar, Header, Card, Footer, PostDetails } from "./Components";
+import { BrowserRouter as Router,Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -18,6 +18,7 @@ const App = () => {
           title: post.title.rendered,
           description: post.yoast_head_json.description,
           author: post.yoast_head_json.author,
+          content: post.content.rendered,
         }));
         setPosts(mappedPosts);
         console.log(data[5]);
@@ -41,32 +42,35 @@ const App = () => {
   }
 
   return (
-    <div className="app-wrapper">
-      <Navbar />
+    <Router>
+<div className="app-wrapper">
+  <Navbar />
+  <Routes>
+    <Route path="/" element={<Header {...posts[0]} />} />
+    <Route path="/posts/:postId" element={<PostDetails />} />
+  </Routes>
+  {/* Your Card and Footer components */}
+  <div className="card-container">
+          {posts.map((post) => (
+            <Link key={post.id} to={`/posts/${post.id}`}>
+            <Card
+              key={post.id}
+              imageUrl={post.imageUrl}
+              title={post.title}
+              description={post.description}
+              author={post.author}
+            />
+          </Link>
+          ))}
+        </div>
 
-      <Header
-        key={posts[0].id}
-        imageUrl={posts[0].imageUrl}
-        title={posts[0].title}
-        description={posts[0].description}
-        author={posts[0].author}
-      />
+        <Footer />
+</div>
+</Router>
 
-      <div className="card-container">
-        {posts.map((post) => (
-          <Card
-            key={post.id}
-            imageUrl={post.imageUrl}
-            title={post.title}
-            description={post.description}
-            author={post.author}
-          />
-        ))}
-      </div>
-
-      <Footer />
-    </div>
   );
 };
 
 export default App;
+
+

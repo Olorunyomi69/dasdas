@@ -23,6 +23,7 @@ const Card = ({ imageUrl, title , description,author}) => {
 
     <div className='etr'>
         <p>12 Mins Read</p>
+
         <button className='cta'>
   <p>Read Full</p>
   <svg
@@ -40,9 +41,10 @@ const Card = ({ imageUrl, title , description,author}) => {
     ></path>
   </svg>
 </button>
+    
     </div>
-      
-    </div>
+  
+  </div>
 
    </div>
   );
