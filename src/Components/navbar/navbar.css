@@ -1,0 +1,22 @@
+.Nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 10px 0
+
+    
+    
+}
+.navigation img{
+    color: black;
+}
+
+.navigation ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.navigation li{
+    list-style-type: none;
+    padding: 20px 50px;
+}

@@ -1,0 +1,25 @@
+
+.head-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40em);
+
+}
+
+.Head-image{
+    background: white;
+    margin: 20px 0;
+    height: 100%
+}
+
+.Head-image img{
+    width: 100%;
+    height: 300px;
+    border-radius: 6px;
+}
+
+.card-text-wrapper{
+    padding: 10px;
+}
+
+
