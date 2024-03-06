@@ -50,7 +50,7 @@ const App = () => {
     <Route path="/" element={<Header {...posts[0]} />} />
     <Route path="/posts/:postId" element={<PostDetails />} />
   </Routes>
-  {/* Your Card and Footer components */}
+
   <div className="card-container">
           {posts.map((post) => (
             <Link key={post.id} to={`/posts/${post.id}`}>

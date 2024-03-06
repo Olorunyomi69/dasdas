@@ -3,6 +3,11 @@
 .post-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     
+}
+
+.post-content img{
+    display: block;
+    margin: 0 auto;
 }
