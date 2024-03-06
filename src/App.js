@@ -19,6 +19,7 @@ const App = () => {
           description: post.yoast_head_json.description,
           author: post.yoast_head_json.author,
           content: post.content.rendered,
+          etr: post.yoast_head_json.twitter_misc["Est. reading time"]
         }));
         setPosts(mappedPosts);
         console.log(data[5]);
@@ -59,6 +60,7 @@ const App = () => {
               title={post.title}
               description={post.description}
               author={post.author}
+              etr={post.etr}
             />
           </Link>
           ))}

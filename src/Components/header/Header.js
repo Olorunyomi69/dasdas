@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-const Header = ({ imageUrl, title, description, author }) => {
+const Header = ({ imageUrl, title, description, author,etr }) => {
   return (
     
       <div className="head-wrapper">
@@ -19,7 +19,7 @@ const Header = ({ imageUrl, title, description, author }) => {
           </div>
 
           <div className="etr">
-            <p>12 Mins Read</p>
+            <p>{etr}</p>
             <button className="cta">
               <p>Read Full</p>
               <svg

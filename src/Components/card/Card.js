@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ imageUrl, title , description,author}) => {
+const Card = ({ imageUrl, title , description,author,etr}) => {
   return (
    <div className='card-wrapper'>
 
@@ -18,11 +18,12 @@ const Card = ({ imageUrl, title , description,author}) => {
 
     <div className='heading'>
     <h5>{title}</h5>
-    <p>{description}</p>
+    <p>{description}
+    </p>
     </div>  
 
     <div className='etr'>
-        <p>12 Mins Read</p>
+        <p>{etr}</p>
 
         <button className='cta'>
   <p>Read Full</p>
