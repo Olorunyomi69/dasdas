@@ -1,14 +1,14 @@
-.app-wrapper{
+.app-wrapper {
   margin: auto;
   padding: 0;
   width: 90%;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.card-container{
+.card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 25em);
   gap: 10px;

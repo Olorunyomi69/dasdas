@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import './postDetails.css';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./postDetails.css";
+import { useParams } from "react-router-dom";
 
 const PostDetails = () => {
-  const { postId } = useParams(); 
+  const { postId } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     fetch(`https://techcrunch.com/wp-json/wp/v2/posts/${postId}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setPost({
           title: data.title.rendered,
           content: data.content.rendered,
         });
       })
-      .catch(error => console.error('Error fetching post details:', error));
-  }, [postId]); 
+      .catch((error) => console.error("Error fetching post details:", error));
+  }, [postId]);
 
   if (!post) {
     return <div>Loading...</div>;
@@ -25,7 +25,10 @@ const PostDetails = () => {
   return (
     <div className="post-details">
       <h2>{post.title}</h2>
-      <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div
+        className="post-content"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
       <h2>More Articles</h2>
     </div>
   );

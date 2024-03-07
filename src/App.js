@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Navbar, Header, Card, Footer, PostDetails } from "./Components";
-import { BrowserRouter as Router,Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,7 @@ const App = () => {
           description: post.yoast_head_json.description,
           author: post.yoast_head_json.author,
           content: post.content.rendered,
-          etr: post.yoast_head_json.twitter_misc["Est. reading time"]
+          etr: post.yoast_head_json.twitter_misc["Est. reading time"],
         }));
         setPosts(mappedPosts);
       })
@@ -43,35 +43,32 @@ const App = () => {
 
   return (
     <Router>
-<div className="app-wrapper">
-  <Navbar />
-  <Routes>
-    <Route path="/" element={<Header {...posts[0]} />} />
-    <Route path="/posts/:postId" element={<PostDetails />} />
-  </Routes>
+      <div className="app-wrapper">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Header {...posts[0]} />} />
+          <Route path="/posts/:postId" element={<PostDetails />} />
+        </Routes>
 
-  <div className="card-container">
+        <div className="card-container">
           {posts.map((post) => (
             <Link key={post.id} to={`/posts/${post.id}`}>
-            <Card
-              key={post.id}
-              imageUrl={post.imageUrl}
-              title={post.title}
-              description={post.description}
-              author={post.author}
-              etr={post.etr}
-            />
-          </Link>
+              <Card
+                key={post.id}
+                imageUrl={post.imageUrl}
+                title={post.title}
+                description={post.description}
+                author={post.author}
+                etr={post.etr}
+              />
+            </Link>
           ))}
         </div>
 
         <Footer />
-</div>
-</Router>
-
+      </div>
+    </Router>
   );
 };
 
 export default App;
-
-
