@@ -16,6 +16,8 @@ const PostDetails = () => {
         });
       })
       .catch((error) => console.error("Error fetching post details:", error));
+
+      window.scrollTo(0, 0);
   }, [postId]);
 
   if (!post) {
