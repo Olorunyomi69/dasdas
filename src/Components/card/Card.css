@@ -1,6 +1,7 @@
 .card-wrapper {
   width: 100%;
   margin: 10px 0;
+  max-width: 1500px;
 }
 
 .card {
@@ -137,3 +138,6 @@ p::before {
   width: 15px;
   transition-delay: 0.2s;
 }
+
+
+
